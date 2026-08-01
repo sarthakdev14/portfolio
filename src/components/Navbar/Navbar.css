@@ -1,0 +1,82 @@
+.custom-navbar {
+  transition: background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease;
+  padding: 1.1rem 0;
+  background: transparent;
+}
+
+.navbar-scrolled {
+  background: rgba(10, 10, 18, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.35);
+  border-bottom: 1px solid var(--color-border);
+  padding: 0.7rem 0;
+}
+
+.brand-mark {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 0.2rem 0.6rem;
+  border: 2px solid var(--color-border-strong);
+  border-radius: 10px;
+  transition: border-color 0.3s ease;
+}
+
+.brand-logo:hover .brand-mark { border-color: var(--color-primary-bright); }
+
+.nav-link-custom {
+  color: var(--color-text-muted) !important;
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin: 0 0.35rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link-custom::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.nav-link-custom:hover,
+.nav-link-custom:focus {
+  color: var(--color-text) !important;
+}
+
+.nav-link-custom:hover::after { width: 70%; }
+
+.custom-navbar .navbar-toggler {
+  border: 1px solid var(--color-border-strong);
+  padding: 0.4rem 0.6rem;
+}
+
+.custom-navbar .navbar-toggler:focus { box-shadow: none; }
+
+.custom-navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+@media (max-width: 991px) {
+  .custom-navbar .navbar-collapse {
+    background: rgba(10, 10, 18, 0.95);
+    backdrop-filter: blur(16px);
+    margin-top: 0.8rem;
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+  }
+  .nav-link-custom { margin: 0.3rem 0; }
+}

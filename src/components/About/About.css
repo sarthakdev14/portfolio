@@ -1,0 +1,106 @@
+.about-section { position: relative; }
+
+.about-card {
+  padding: 1.8rem 1rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+}
+
+.about-icon-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  color: var(--color-primary-bright);
+  transition: transform 0.4s var(--ease-out), background 0.4s var(--ease-out);
+}
+
+.about-card:hover .about-icon-wrap {
+  transform: scale(1.1) rotate(-5deg);
+  background: rgba(99, 102, 241, 0.2);
+}
+
+.about-card-label {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Journey timeline */
+.journey-timeline {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+  padding-left: 0;
+}
+
+.journey-timeline::before {
+  content: '';
+  position: absolute;
+  left: 27px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--color-primary), var(--color-secondary));
+}
+
+.journey-item {
+  position: relative;
+  padding: 0 0 2rem 4.5rem;
+}
+
+.journey-item:last-child { padding-bottom: 0; }
+
+.journey-step {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #fff;
+  background: var(--gradient-primary);
+  box-shadow: 0 0 24px rgba(99, 102, 241, 0.35);
+  z-index: 1;
+}
+
+.journey-content {
+  padding: 1.8rem;
+}
+
+.journey-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.journey-text {
+  font-size: 0.98rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.75;
+}
+
+@media (max-width: 576px) {
+  .about-card { padding: 1.3rem 0.8rem; }
+  .about-card-label { font-size: 0.82rem; }
+  .journey-item { padding-left: 3.5rem; }
+  .journey-step { width: 44px; height: 44px; font-size: 0.95rem; }
+  .journey-content { padding: 1.4rem; }
+  .journey-text { font-size: 0.9rem; }
+}
